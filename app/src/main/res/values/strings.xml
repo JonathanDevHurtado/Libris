@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Libris</string>
+    <string name="library_title">Mi Biblioteca</string>
+    <string name="tab_library">Biblioteca</string>
+    <string name="tab_history">Historial</string>
+    <string name="tab_explore">Explorar</string>
+    <string name="tab_settings">Ajustes</string>
+    <string name="continue_reading">Continuar Leyendo</string>
+    <string name="import_pdf">Importar PDF</string>
+    <string name="narrator">Narrador de Voz</string>
+    <string name="play">Reproducir</string>
+    <string name="pause">Pausar</string>
+    <string name="stop">Detener</string>
+    <string name="voice_model">Modelo de Voz</string>
+    <string name="speech_rate">Velocidad</string>
+    <string name="speech_pitch">Tono</string>
+    <string name="theme_light">Claro</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="theme_sepia">Sepia Vintage</string>
+    <string name="theme_oled">OLED Nocturno</string>
+    <string name="page_turn_real">Página Real (3D Curl)</string>
+    <string name="page_turn_slide">Deslizamiento Suave</string>
+    <string name="offline_mode">Modo Sin Conexión</string>
+    <string name="google_connected">Conectado con Google</string>
+    <string name="tab_gemini">Asistente IA</string>
+    <string name="developer_contact">JonathanHurtadoDev@proton.me Desarrollador contacto</string>
+    <string name="sync_status">Sincronizado</string>
+</resources>

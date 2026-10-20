@@ -1,0 +1,62 @@
+name: Bug
+description: Algo no funciona como debería
+title: "[bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por reportar. **No incluyas datos personales, tokens, claves de
+        Gemini ni PDFs privados.** Para vulnerabilidades usa SECURITY.md, no un
+        issue público.
+  - type: input
+    id: version
+    attributes:
+      label: Versión de Libris
+      placeholder: "1.0"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Dispositivo y Android
+      placeholder: "Pixel 7 · Android 15"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducir
+      placeholder: |
+        1. Abrir la app
+        2. Importar un PDF
+        3. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Resultado esperado
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Resultado actual
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs (opcional)
+      description: "adb logcat -s GeminiAdvisor PdfRendererManager"
+      render: shell
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Comprobaciones
+      options:
+        - label: He leído las limitaciones conocidas del README
+          required: true
+        - label: No estoy reportando una vulnerabilidad de seguridad
+          required: true

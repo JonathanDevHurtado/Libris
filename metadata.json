@@ -1,0 +1,6 @@
+{
+  "name": "Libris",
+  "description": "Biblioteca y lector de libros y PDFs con animación de paso de página realista, narrador con modelos de voz locales, personalización de temas e historial.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

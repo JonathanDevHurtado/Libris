@@ -1,0 +1,38 @@
+# --- Android / Gradle ---
+*.iml
+.gradle/
+.kotlin/
+/build/
+/app/build/
+/captures/
+/local.properties
+local.properties
+.externalNativeBuild/
+.cxx/
+*.apk
+*.aab
+*.ap_
+*.dex
+*.class
+bin/
+gen/
+out/
+release/
+
+# --- IDE / sistema ---
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Secretos y firma ---
+.env
+.env.local
+*.jks
+*.keystore
+keystore.properties
+secrets.properties
+google-services.json
+
+# --- Logs ---
+*.log
