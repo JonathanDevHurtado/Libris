@@ -1,7 +1,7 @@
 # Funcionamiento de Libris
 
 Guía de las pantallas y flujos principales tal como están implementados en la
-versión 1.0. Recuerda que es una **demo**: las cuentas y la nube son simuladas.
+versión 1.1.0. Recuerda que es una **demo**: las cuentas y la nube son simuladas.
 
 ---
 

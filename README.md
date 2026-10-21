@@ -7,7 +7,8 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Versi%C3%B3n-1.0-6C5CE7?style=for-the-badge" alt="Versión 1.0"/>
+  <img src="https://img.shields.io/badge/Versi%C3%B3n-1.1.0-6C5CE7?style=for-the-badge" alt="Versión 1.1.0"/>
+  <a href="https://github.com/JonathanDevHurtado/LIBROUS/releases/latest"><img src="https://img.shields.io/github/v/release/JonathanDevHurtado/LIBROUS?style=for-the-badge&label=release&color=6C5CE7" alt="Última release"/></a>
   <img src="https://img.shields.io/badge/Android-7.0%2B%20(API%2024)-3DDC84?style=for-the-badge&logo=android&logoColor=white" alt="Android 7.0+"/>
   <img src="https://img.shields.io/badge/Kotlin-2.2-7F52FF?style=for-the-badge&logo=kotlin&logoColor=white" alt="Kotlin"/>
   <img src="https://img.shields.io/badge/Jetpack%20Compose-Material%203-4285F4?style=for-the-badge&logo=jetpackcompose&logoColor=white" alt="Jetpack Compose"/>
@@ -33,6 +34,27 @@ sistema y un asistente literario que funciona con Gemini o con respuestas locale
 > Wattpad son simuladas, la sincronización en la nube no existe y la biblioteca
 > vive en memoria. Lee [Estado y limitaciones](#-estado-y-limitaciones) antes de
 > usarlo o publicarlo.
+
+---
+
+## 📦 Descarga
+
+[![Última release](https://img.shields.io/github/v/release/JonathanDevHurtado/LIBROUS?style=for-the-badge&label=⬇️%20Descargar)](https://github.com/JonathanDevHurtado/LIBROUS/releases/latest)
+
+| Archivo | Uso |
+|---|---|
+| `Libris-1.1.0.apk` | Instalar en el teléfono (firmado) |
+| `Libris-1.1.0.aab` | Subir a Google Play |
+| `Libris-1.1.0-docs.zip` | Documentación completa sin conexión |
+| `SHA256SUMS.txt` | Verificar la integridad de las descargas |
+
+```bash
+sha256sum -c SHA256SUMS.txt
+```
+
+> **Es una demo**, no un lector de producción: la biblioteca vive en memoria y
+> las cuentas/sincronización son simuladas. Requiere **Android 7.0 (API 24)** o
+> superior.
 
 ---
 
@@ -218,6 +240,17 @@ El APK queda en `app/build/outputs/apk/debug/app-debug.apk`.
 La configuración de release es la de AI Studio: espera un keystore en
 `my-upload-key.jks` o en la ruta de `KEYSTORE_PATH`, con `STORE_PASSWORD` y
 `KEY_PASSWORD` como variables de entorno. No hay claves en el repositorio.
+
+```bash
+export KEYSTORE_PATH=/ruta/segura/LIBROUS-release.jks
+export STORE_PASSWORD='...'
+export KEY_PASSWORD='...'
+./gradlew --no-daemon assembleRelease bundleRelease
+```
+
+Los artefactos firmados quedan en `app/build/outputs/apk/release/` y
+`app/build/outputs/bundle/release/`. El proceso completo está en
+[`docs/PUBLICAR.md`](docs/PUBLICAR.md).
 
 ---
 

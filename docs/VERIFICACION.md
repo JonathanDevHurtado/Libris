@@ -1,6 +1,6 @@
-# Verificación — Libris 1.0
+# Verificación — Libris 1.1.0
 
-Fecha: **2026-10-20**  
+Fecha: **2026-10-21**
 Entorno: Linux, JDK 17 (`17.0.13-tem`), Android SDK Platform 36.
 
 ---
@@ -9,22 +9,27 @@ Entorno: Linux, JDK 17 (`17.0.13-tem`), Android SDK Platform 36.
 
 ```bash
 export JAVA_HOME=/ruta/al/jdk-17
-./gradlew --no-daemon testDebugUnitTest assembleDebug lintDebug
+export KEYSTORE_PATH=/ruta/segura/LIBROUS-release.jks
+export STORE_PASSWORD='...'
+export KEY_PASSWORD='...'
+
+./gradlew --no-daemon clean testDebugUnitTest lintDebug
+./gradlew --no-daemon assembleRelease bundleRelease
 ```
 
 Resultado:
 
 ```
-BUILD SUCCESSFUL in 1m 21s
-58 actionable tasks: 17 executed, 41 up-to-date
+BUILD SUCCESSFUL in 3m 57s
+102 actionable tasks: 83 executed, 19 from cache
 ```
 
 | Tarea | Resultado |
 |-------|-----------|
 | `testDebugUnitTest` | ✅ 3 tests, 0 fallos, 0 errores |
-| `assembleDebug` | ✅ `app-debug.apk` (25 MB) |
 | `lintDebug` | ✅ sin errores (81 avisos) |
-| `assembleRelease` | ⏸️ No ejecutado: requiere keystore de AI Studio |
+| `assembleRelease` | ✅ `app-release.apk` firmado (17,7 MB) |
+| `bundleRelease` | ✅ `app-release.aab` firmado (17,2 MB) |
 
 Los tests son los de ejemplo del proyecto:
 
@@ -32,6 +37,26 @@ Los tests son los de ejemplo del proyecto:
 - `ExampleRobolectricTest`: 2 tests (nombre de la app y recurso de texto).
 
 No cubren el lector, el repositorio, el TTS ni Gemini.
+
+---
+
+## Release 1.1.0
+
+| Artefacto | Tamaño | SHA-256 |
+|---|---:|---|
+| `Libris-1.1.0.apk` | 17,7 MB | `a187ed5e04a3154b76f1fde9c1ed32a70312cae8b5ec7718f2f82b6940f6231c` |
+| `Libris-1.1.0.aab` | 17,2 MB | `718710c837c2c50abc780329693115421f15d8fce52226dcbe72d02e4d00da12` |
+
+Firma comprobada con `apksigner verify --print-certs`:
+
+```
+Signer #1 certificate DN: CN=Jonathan Hurtado, OU=Libris,
+  O=JonathanDevHurtado, L=Bogota, C=CO
+```
+
+El AAB también pasa `jarsigner -verify`. La clave de release se guarda fuera del
+repositorio y se pasa mediante `KEYSTORE_PATH`, `STORE_PASSWORD` y `KEY_PASSWORD`;
+no hay claves versionadas.
 
 ---
 
@@ -67,10 +92,10 @@ tanto no se probó:
 - rotación, pantalla pequeña/tablet y modo oscuro del sistema;
 - TalkBack y tamaños de fuente grandes;
 - una llamada real a Gemini con clave;
-- el build de release y su firma.
+- la instalación del APK de release en un dispositivo físico.
 
-La verificación cubre compilación, tests JVM, lint, recursos y empaquetado del APK
-debug.
+La verificación cubre compilación, tests JVM, lint, recursos, empaquetado y firma
+del APK/AAB de release.
 
 ---
 
@@ -88,4 +113,15 @@ keytool -genkeypair -v \
 ./gradlew --no-daemon testDebugUnitTest assembleDebug lintDebug
 ```
 
-El APK queda en `app/build/outputs/apk/debug/app-debug.apk`.
+Para el release firmado:
+
+```bash
+export KEYSTORE_PATH=/ruta/segura/LIBROUS-release.jks
+export STORE_PASSWORD='...'
+export KEY_PASSWORD='...'
+./gradlew --no-daemon assembleRelease bundleRelease
+```
+
+El APK de debug queda en `app/build/outputs/apk/debug/app-debug.apk`; los
+artefactos firmados quedan en `app/build/outputs/apk/release/` y
+`app/build/outputs/bundle/release/`.
