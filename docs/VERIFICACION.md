@@ -9,7 +9,7 @@ Entorno: Linux, JDK 17 (`17.0.13-tem`), Android SDK Platform 36.
 
 ```bash
 export JAVA_HOME=/ruta/al/jdk-17
-export KEYSTORE_PATH=/ruta/segura/LIBROUS-release.jks
+export KEYSTORE_PATH=/ruta/segura/Libris-release.jks
 export STORE_PASSWORD='...'
 export KEY_PASSWORD='...'
 
@@ -116,7 +116,7 @@ keytool -genkeypair -v \
 Para el release firmado:
 
 ```bash
-export KEYSTORE_PATH=/ruta/segura/LIBROUS-release.jks
+export KEYSTORE_PATH=/ruta/segura/Libris-release.jks
 export STORE_PASSWORD='...'
 export KEY_PASSWORD='...'
 ./gradlew --no-daemon assembleRelease bundleRelease

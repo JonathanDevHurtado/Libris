@@ -29,7 +29,7 @@ La clave **nunca se sube al repositorio**. Debe guardarse fuera del proyecto y
 respaldarse junto con sus contraseñas.
 
 ```bash
-export KEYSTORE_PATH=/ruta/segura/LIBROUS-release.jks
+export KEYSTORE_PATH=/ruta/segura/Libris-release.jks
 export STORE_PASSWORD='...'
 export KEY_PASSWORD='...'
 ```
@@ -43,7 +43,7 @@ archivo (`debug.keystore`) y no sirve para publicar.
 
 ```bash
 export JAVA_HOME=/ruta/al/jdk-17
-export KEYSTORE_PATH=/ruta/segura/LIBROUS-release.jks
+export KEYSTORE_PATH=/ruta/segura/Libris-release.jks
 export STORE_PASSWORD='...'
 export KEY_PASSWORD='...'
 

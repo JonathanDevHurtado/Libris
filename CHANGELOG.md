@@ -20,6 +20,7 @@ descargable.
 
 - `versionCode` 2 y `versionName` 1.1.0.
 - `docs/VERIFICACION.md` actualizado con el build de release.
+- Repositorio, documentación y enlaces unificados bajo el nombre **Libris**.
 
 ### Notas
 
@@ -60,5 +61,5 @@ Primera instantánea pública del proyecto original creado en Google AI Studio.
   sincronización en la nube.
 - `versionCode` y `versionName` se mantienen en `1` y `1.0`.
 
-[1.1.0]: https://github.com/JonathanDevHurtado/LIBROUS/compare/v1.0.0...v1.1.0
-[1.0.0]: https://github.com/JonathanDevHurtado/LIBROUS/releases/tag/v1.0.0
+[1.1.0]: https://github.com/JonathanDevHurtado/Libris/compare/v1.0.0...v1.1.0
+[1.0.0]: https://github.com/JonathanDevHurtado/Libris/releases/tag/v1.0.0

@@ -19,8 +19,8 @@ no envíes cambios.
 ## Preparar el entorno
 
 ```bash
-git clone https://github.com/JonathanDevHurtado/LIBROUS.git
-cd LIBROUS
+git clone https://github.com/JonathanDevHurtado/Libris.git
+cd Libris
 
 # El build de debug de AI Studio espera este archivo en la raíz
 keytool -genkeypair -v \
